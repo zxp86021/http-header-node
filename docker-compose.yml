@@ -1,0 +1,46 @@
+version: '3'
+
+networks:
+  backend:
+    driver: bridge
+
+services:
+  nginx:
+    build:
+      context: ./nginx
+      args:
+        - http_proxy
+        - https_proxy
+        - no_proxy
+    volumes:
+      - ./logs/nginx/:/var/log/nginx
+      - ./nginx/sites/:/etc/nginx/sites-available
+      - ./nginx/ssl/:/etc/nginx/ssl
+    depends_on:
+      - backend
+      - nginx2
+    ports:
+      - "180:80"
+      - "181:81"
+      - "1443:443"  
+    networks:
+      - backend
+  nginx2:
+    build:
+      context: ./nginx2
+      args:
+        - http_proxy
+        - https_proxy
+        - no_proxy
+    volumes:
+      - ./logs/nginx2/:/var/log/nginx
+      - ./nginx2/sites/:/etc/nginx/sites-available
+      - ./nginx2/ssl/:/etc/nginx/ssl
+    depends_on:
+      - backend
+    networks:
+      - backend
+  backend:
+    build: ./backend
+    networks:
+      - backend

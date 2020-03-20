@@ -1,0 +1,8 @@
+2020/03/02 05:19:43 [emerg] 11#11: getpwnam("www-data") failed in /etc/nginx/nginx.conf:1
+2020/03/02 05:25:02 [emerg] 8#8: getpwnam("www-data") failed in /etc/nginx/nginx.conf:1
+2020/03/02 05:28:37 [emerg] 11#11: getpwnam("www-data") failed in /etc/nginx/nginx.conf:1
+2020/03/02 05:32:46 [emerg] 11#11: host not found in upstream "backend:3000" in /etc/nginx/conf.d/upstream.conf:1
+2020/03/02 05:35:43 [emerg] 11#11: unexpected end of file, expecting "}" in /etc/nginx/sites-available/default.conf:37
+2020/03/02 05:42:38 [emerg] 11#11: unexpected end of file, expecting "}" in /etc/nginx/sites-available/default.conf:37
+2020/03/02 05:45:07 [emerg] 11#11: unexpected end of file, expecting "}" in /etc/nginx/sites-available/default.conf:37
+2020/03/02 05:46:31 [emerg] 11#11: host not found in upstream "backend" in /etc/nginx/sites-available/default.conf:8
